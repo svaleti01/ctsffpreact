@@ -4,6 +4,7 @@ import Card from '../UI/Card';
 import './DepositForm.css';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import { withRouter } from "react-router-dom";
 
 const DepositForm = React.memo(props => {
   const [enteredAccountType, setEnteredAccountType] = useState('');
@@ -21,6 +22,16 @@ const DepositForm = React.memo(props => {
     resetformfields();
   };
 
+  const clickbackHandler = (event) => {
+          props.history.push(
+        {
+          pathname: '/AccountMaintanance'
+        });
+      }
+
+
+    //props.history.push(`/EducationLoanForm`, {data: selectedloan[0].value});
+  
   return (
     <section className="deposit-form">
       <Card>
@@ -60,10 +71,13 @@ const DepositForm = React.memo(props => {
           <div className="deposit-form__actions">
             <button type="submit">Add Deposit</button>
           </div>
+          <div className="deposit-form__actions">
+            <button id="back" type="button" onClick={clickbackHandler}>Back</button>
+          </div>
         </form>
       </Card>
     </section>
   );
 });
 
-export default DepositForm;
+export default withRouter(DepositForm);
