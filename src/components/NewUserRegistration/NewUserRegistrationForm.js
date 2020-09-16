@@ -93,7 +93,7 @@ const NewUserRegistrationForm = React.memo(props => {
           <div className="form-control">
             <label htmlFor="password">Password</label>
             <input
-              type="text"
+              type="password"
               id="password"
               required="required"
               value={enteredPassword}
