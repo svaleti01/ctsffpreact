@@ -5,7 +5,7 @@ import './EducationLoanForm.css';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import Select from "react-dropdown-select";
-
+import { withRouter } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 
 const EducationLoanForm = (props) => {
@@ -68,11 +68,20 @@ const EducationLoanForm = (props) => {
     resetformfields();
   };
 
+  const clickbackHandler = (event) => {
+    props.history.push(
+  {
+    pathname: '/AccountMaintanance'
+  });
+}
   return (
     <section className="educationloan-form">
       <h1>Welcome {props.userName} {props.x} !</h1>
       <Card>
         <form onSubmit={submitHandler}>
+        <div className="deposit-form__actions">
+            <button id="back" type="button" onClick={clickbackHandler}>Back</button>
+          </div>
         <p>Application for {location.loanType}  !</p>
           <div className="form-control">
             <label htmlFor="loantype">Loan Type</label>
@@ -188,9 +197,10 @@ const EducationLoanForm = (props) => {
           <div className="ingredient-form__actions">
             <button type="submit">Apply Loan</button>
           </div>
+          
         </form>
       </Card>
     </section>
   );
 };
-export default EducationLoanForm;
+export default withRouter(EducationLoanForm);

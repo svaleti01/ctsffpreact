@@ -5,7 +5,7 @@ import './HomeandPersonalLoanForm.css';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import Select from "react-dropdown-select";
-
+import { withRouter } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 
 const HomeandPersonalLoanForm = (props) => {
@@ -67,12 +67,20 @@ const HomeandPersonalLoanForm = (props) => {
     alert("Successfully Applied for Loan");
     resetformfields();
   };
-
+  const clickbackHandler = (event) => {
+    props.history.push(
+  {
+    pathname: '/AccountMaintanance'
+  });
+}
   return (
     <section className="homeandpersonalloan-form">
       <h1>Welcome {props.userName} {props.x} !</h1>
       <Card>
         <form onSubmit={submitHandler}>
+        <div className="deposit-form__actions">
+            <button id="back" type="button" onClick={clickbackHandler}>Back</button>
+          </div>
           <p>Application for {location.loanType}  !</p>
           <div className="form-control">
             <label htmlFor="loantype">Loan Type</label>
@@ -193,4 +201,4 @@ const HomeandPersonalLoanForm = (props) => {
     </section>
   );  
 };
-export default HomeandPersonalLoanForm;
+export default withRouter(HomeandPersonalLoanForm);
