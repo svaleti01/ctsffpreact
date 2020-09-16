@@ -11,7 +11,7 @@ import { useLocation } from "react-router-dom";
 const EducationLoanForm = (props) => {
 
   const location = useLocation();
-  
+
   const [enteredLoanType, setEnteredLoanType] = useState(location.loanType);
   const [enteredLoanamount, setEnteredLoanamount] = useState('');
   const [enteredLoanapplyDate, setEnteredLoanapplyDate] = useState('');
@@ -70,19 +70,19 @@ const EducationLoanForm = (props) => {
 
   const clickbackHandler = (event) => {
     props.history.push(
-  {
-    pathname: '/AccountMaintanance'
-  });
-}
+      {
+        pathname: '/AccountMaintanance'
+      });
+  }
   return (
     <section className="educationloan-form">
       <h1>Welcome {props.userName} {props.x} !</h1>
       <Card>
         <form onSubmit={submitHandler}>
-        <div className="deposit-form__actions">
+          <div className="deposit-form__actions">
             <button id="back" type="button" onClick={clickbackHandler}>Back</button>
           </div>
-        <p>Application for {location.loanType}  !</p>
+          <p>Application for {location.loanType}  !</p>
           <div className="form-control">
             <label htmlFor="loantype">Loan Type</label>
             <input
@@ -197,7 +197,7 @@ const EducationLoanForm = (props) => {
           <div className="ingredient-form__actions">
             <button type="submit">Apply Loan</button>
           </div>
-          
+
         </form>
       </Card>
     </section>

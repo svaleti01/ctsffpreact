@@ -23,15 +23,15 @@ const DepositForm = React.memo(props => {
   };
 
   const clickbackHandler = (event) => {
-          props.history.push(
-        {
-          pathname: '/AccountMaintanance'
-        });
-      }
+    props.history.push(
+      {
+        pathname: '/AccountMaintanance'
+      });
+  }
 
 
-    //props.history.push(`/EducationLoanForm`, {data: selectedloan[0].value});
-  
+  //props.history.push(`/EducationLoanForm`, {data: selectedloan[0].value});
+
   return (
     <section className="deposit-form">
       <Card>

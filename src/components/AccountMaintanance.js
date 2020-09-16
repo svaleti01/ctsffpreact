@@ -28,15 +28,23 @@ const AccountMaintanance = React.memo(props => {
           pathname: '/HomeandPersonalLoanForm',
           loanType: selectedloan[0].label
         });
+  }
+  const clickhomeHandler = (event) => {
 
+    props.history.push(
+      {
+        pathname: '/'
+      });
 
-    //props.history.push(`/EducationLoanForm`, {data: selectedloan[0].value});
   }
   return (
     <section className="accountaintanance-form">
       <Card>
         <form onSubmit={submitHandler}>
           <h1>Welcome {props.userName} {props.x} !</h1>
+          <div className="accountaintanance-form__actions">
+            <button id="home" type="button" onClick={clickhomeHandler}>Home</button>
+          </div>
           <p>For deposits, please press the Deposit button below</p>
           <div className="accountaintanance-form__actions">
             <button type="Deposit">Deposit</button>

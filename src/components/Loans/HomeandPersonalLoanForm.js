@@ -56,7 +56,7 @@ const HomeandPersonalLoanForm = (props) => {
       loanamount: enteredLoanamount,
       loanapplyDate: enteredLoanapplyDate,
       rateofInterest: enteredRateofInterest,
-      loanduration: selectedLoanDuration[0].label,      
+      loanduration: selectedLoanDuration[0].label,
       annualIncome: enteredAnnualIncome,
       companyname: enteredCompanyName,
       designation: enteredDesignation,
@@ -69,16 +69,16 @@ const HomeandPersonalLoanForm = (props) => {
   };
   const clickbackHandler = (event) => {
     props.history.push(
-  {
-    pathname: '/AccountMaintanance'
-  });
-}
+      {
+        pathname: '/AccountMaintanance'
+      });
+  }
   return (
     <section className="homeandpersonalloan-form">
       <h1>Welcome {props.userName} {props.x} !</h1>
       <Card>
         <form onSubmit={submitHandler}>
-        <div className="deposit-form__actions">
+          <div className="deposit-form__actions">
             <button id="back" type="button" onClick={clickbackHandler}>Back</button>
           </div>
           <p>Application for {location.loanType}  !</p>
@@ -199,6 +199,6 @@ const HomeandPersonalLoanForm = (props) => {
         </form>
       </Card>
     </section>
-  );  
+  );
 };
 export default withRouter(HomeandPersonalLoanForm);
